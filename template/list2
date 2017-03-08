@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="col-sm-6 col-sm-offset-3">
+    <h1>{{ title }}</h1>
+<form method='get' action=''>
+<input type='text' name='q' placeholder='Search posts' value='{{ request.GET.q }}'/>
+<input type='submit' value='search'/>
+</form>
+
+{% for obj in object_list %}
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="thumbnail">
+        {% if obj.image %}
+         <img src='{{ obj.image.url }}' class='img-responsive' />
+        {% endif %}
+      <div class="caption">
+        <h3><a href='{{ obj.get_absolute_url }}'>{{ obj.title }} </a> <small>{{ obj.timestamp|timesince }} ago</small></h3>
+        {% if obj.user.get_full_name %}<p>Author: {{ obj.user.get_full_name }}</p>{% endif %}
+        <p>{{ obj.content|linebreaks|truncatechars:120 }}</p>
+        <p><a href="{{ obj.get_absolute_url }}" class="btn btn-primary" role="button">View</a></p>
+      </div>
+    </div>
+  </div>
+<hr/>
+</div>
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if object_list.has_previous %}
+            <a href="?page={{ object_list.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+        </span>
+
+        {% if object_list.has_next %}
+            <a href="?page={{ object_list.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+</div>
+
+
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+    <div class="dropdown-content dropdown-height">
+       <ul>
+         <li role="presentation"><a aria-label = "Sign in to Groceries" data-ltc="header-sign-in-grocery" id="grocery-sign-in" href="https://secure.tesco.com/register/?from=http%3a%2f%2fwww.tesco.com%2fgroceries%2f"><span>Groceries</span><i></i></a></li>
+         <li role="presentation"><a aria-label = "Sign in to Direct" data-ltc="header-sign-in-direct" href="https://secure.tesco.com/direct/my/register.page"><span>Direct<span> <i></i></a></li>
+         <li role="presentation"><a aria-label = "Sign in to Clothing" data-ltc="header-sign-in-clothing" href="https://www.clothingattesco.com/bin/venda?ex=co_wizr-register&amp;bsref=clothingattesco"><span>Clothing</span> <i></i></a></li>
+         <li role="presentation"><a aria-label = "Sign in to Tesco Clubcard" data-ltc="header-sign-in-clubcard" href="https://secure.tesco.com/register/default.aspx?from=http://www.tesco.com/clubcard/"><span>Tesco Clubcard</span> <i></i></a></li>
+         <li role="presentation"><a aria-label = "Sign in to Tesco Bank" data-ltc="header-sign-in-bank" href="https://www.tescobank.com/servicing/accounts_hub.html?referrerid=tesco"><span>Tesco Bank</span> <i></i></a></li>
+         <li role="presentation"><a aria-label = "Sign in to Wine by the Case" data-ltc="header-sign-in-wine" href="https://secure.tesco.com/register/default.aspx?from=http://www.tesco.com/wine/"><span>Wine by the case</span> <i></i></a></li>
+         <li role="presentation"><a aria-label = "Sign in to Tesco Mobile" data-ltc="header-sign-in-mobile" href="http://www.tescomobile.com/my-account"><span>Tesco Mobile</span> <i></i></a></li>
+         <!-- <li><a data-ltc="header-sign-in-broadband" href="https://www.mytescobroadband.com/Selfcare/">Tesco Broadband <i></i></a></li> -->
+         <li role="presentation"><a data-ltc="header-sign-in-photo" href="https://www.tescophoto.com/account/login.aspx?utm_source=tesco_dc_home_sign_in&amp;utm_medium=tesco_home_link_sign_in&amp;utm_campaign=tesco_dc_home"><span>Tesco Photo</span> <i></i></a></li>
+       </ul>
+     </div>
+
+
+
+
+
+
+
+     <!DOCTYPE html>
+     <html>
+     <title>W3.CSS</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="/lib/w3.css">
+     <body>
+
+     <div class="w3-container">
+       <h2>Animated Dropdown</h2>
+       <p>Use any of the w3-animate-classes to fade, zoom or slide in the dropdown content (w3-animate-zoom|opacity|top|bottom|left|right).</p>
+
+       <div class="w3-dropdown-click">
+         <button onclick="myFunction()" class="w3-button">Click me</button>
+         <div id="Demo" class="w3-dropdown-content w3-card-4 w3-animate-zoom">
+           <a href="#">Link 1</a>
+           <a href="#">Link 2</a>
+           <a href="#">Link 3</a>
+         </div>
+       </div>
+     </div>
+
+     <script>
+     function myFunction() {
+         var x = document.getElementById("Demo");
+         if (x.className.indexOf("w3-show") == -1) {
+             x.className += " w3-show";
+         } else {
+             x.className = x.className.replace(" w3-show", "");
+         }
+     }
+     </script>
+
+     </body>
+     </html>
