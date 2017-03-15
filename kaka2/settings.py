@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'posts',
     'home',
+
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -127,7 +128,12 @@ STATIC_URL = '/static/'
 
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, STATIC_URL),
+
+    #os.path.join(BASE_DIR, STATIC_URL),
+
+    os.path.join(BASE_DIR, "static"),
+    #'/static/'
+
 ]
 
 
