@@ -9,6 +9,10 @@ from django.utils import timezone
 from django.utils.text import slugify
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> First commit
 # Create your models here.
 class PostManager(models.Manager):
     def all(self, *args, **kwargs):
@@ -22,9 +26,12 @@ def upload_location(instance, filename):
     return "%s/%s" % (instance.id, filename)
 
 
+
 class Post(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
     title = models.CharField(max_length=120)
+    description = models.TextField(null=True, blank=True)
+    price = models.DecimalField(decimal_places=2, max_digits=100, default=0)
     slug = models.SlugField(unique=True)
     image = models.ImageField(upload_to=upload_location,
                               null=True,
@@ -33,9 +40,11 @@ class Post(models.Model):
                               height_field="height_field")
     height_field = models.IntegerField(default=0)
     width_field = models.IntegerField(default=0)
-    content = models.TextField()
+    Quantity = models.IntegerField(default=0)
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+    active = models.BooleanField(default=True)
+
 
     # objects = PostManager()
 
@@ -46,7 +55,8 @@ class Post(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("posts:detail", kwargs={"id": self.id})
+        #return reverse("posts:detail", kwargs={"id": self.id})
+        return "/posts/%s/" %(self.id)
 
     class Meta:
         ordering = ["-timestamp", "-updated"]

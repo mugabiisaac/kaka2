@@ -6,29 +6,28 @@
 {% endblock head_title %}
 
 {% block content %}
-<div class='col-sm-6 col-sm-offset-3'>
+<h1>{{ post.title }}</h1>
+
+<div class='col-sm-3 col-sm-offset-3'>
     {% if instance.image %}
     <img src='{{ instance.image.url }}' class='img-responsive' />
     {% endif %}
-<h1>{{ title }} <small>{{ instance.timestamp }}</small></h1>
+<h1>{{ title }}</h1>
+<p>{{ obj.description|linebreaks|truncatechars:30 }}</p>
 {% if instance.user.get_full_name %}
-<p>Author: {{ instance.user.get_full_name }}</p>
+<p>Distributor: {{ instance.user.get_full_name }}</p>
 {% endif %}
 <hr/>
-<p><div class="fb-like" data-href="{{ request.build_absolute_url }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-
-</p>
+<p><a href="{{ obj.get_absolute_url }}" class="btn btn-default" role="button">Order</a>
+  <a href="#" class="btn btn-default" role="button">USD{{ obj.price}}</a></p> <br/>
+  Shipping: Free with USD30+ purchase.<hr/>
+<p><div class="fb-like" data-href="{{ request.build_absolute_url }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div></p>
 
 
 <div class='row'>
 <div class='col-sm-12'>
 
-{{ instance.content|linebreaks }}<br/>
-
-<hr/>
-<br/>
-
-<div class="fb-comments" data-numposts="5"></div>
+{{ instance.content|linebreaks }}<br/><hr/>
 
 </div>
 </div>

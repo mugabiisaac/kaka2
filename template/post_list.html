@@ -1,55 +1,129 @@
 {% extends "base.html" %}
 {% block content %}
+<body>
+  <div class="container">
+    <p class="serif">Kaka~online</p>
+    {% if user.is_authenticated %}
+      <ul class="nav navbar-nav navbar-right">
+        <!--<li><a href="{% url 'posts:list' %}" class="button2" role="button2">Buy</a></li>
 
-<div class="col-sm-6 col-sm-offset-3">
-    <h1>{{ title }}</h1>
-<form method='get' action=''>
-<input type='text' name='q' placeholder='Search posts' value='{{ request.GET.q }}'/>
-<input type='submit' value='search'/>
-</form>
+        <li class="button2"><a href="{% url 'auth_login' %}" class="button2" role="button2">Login</a></li>
+        <li><a href="{% url 'auth_login' %}" class="button2" role="button2">Contact us</a></li>-->
+        <form method='get' action=''>
+          <input type='text' name='q' placeholder='Search' value='{{ request.GET.q }}'/>
+          <input type='button' value='search'/>
+       </form>
+      </ul>
+    {% endif %}
 
-{% for obj in object_list %}
+    <hr/>
 
-
-<div class="row">
-  <div class="col-sm-6">
-    <div class="thumbnail">
-        {% if obj.image %}
-         <img src='{{ obj.image.url }}' class='img-responsive' />
-        {% endif %}
-      <div class="caption">
-        <h3><a href='{{ obj.get_absolute_url }}'>{{ obj.title }} </a> <small>{{ obj.timestamp|timesince }} ago</small></h3>
-        {% if obj.user.get_full_name %}<p>Author: {{ obj.user.get_full_name }}</p>{% endif %}
-        <p>{{ obj.content|linebreaks|truncatechars:120 }}</p>
-        <span>
-          <p><a href="{{ obj.get_absolute_url }}" class="btn btn-primary" role="button">Contact supplier</a></p>
-          <p><a href="{{ obj.get_absolute_url }}" class="btn btn-primary" role="button">View</a></p>
-        </span>
-      </div>
-      </div>
+    <div class="dropdown">
+      <li class="button1"><a>Electronics</a></li>
+    <div class="dropdown-content">
+      <a href="#">Computers</a>
+      <a href="#">phones</a>
+      <a href="#">Sound systems</a>
+      <a href="#">Televisions</a>
+      <a href="#">Home Appliances</a>
+      <a href="#">Game consoles</a>
+      <a href="#">washing machines</a>
+      <a href="#">Kitchen appliances</a>
+      <a href="#">Printers</a>
+      <a href="#">cameras</a>
     </div>
   </div>
-<hr/>
+  <span>
+  <div class="dropdown">
+    <li class="button1"><a>Jewelary</a></li>
+    <div class="dropdown-content">
+      <a href="#">Hair and head ornaments</a>
+      <a href="#">Neck</a>
+      <a href="#">Arms</a>
+      <a href="#">Hands</a>
+      <a href="#">Body</a>
+      <a href="#">Feet</a>
+      <a href="#">Special functions</a>
+      <a href="#">Components</a>
+   </div>
+  </div>
+  <div class="dropdown">
+    <li class="button1"><a>Cosmetics</a></li>
+    <div class="dropdown-content">
+      <a href="#">Face</a>
+      <a href="#">Cheeks</a>
+      <a href="#">Eyebrows and Eyes</a>
+      <a href="#">Lips</a>
+   </div>
 </div>
-{% endfor %}
+  <div class="dropdown">
+    <li class="button1"><a>Home-decor</a></li>
+    <div class="dropdown-content">
+      <a href="#">Lanterns</a>
+      <a href="#">Wall Hangings</a>
+      <a href="#">Mirrors</a>
+      <a href="#">Photo Frames</a>
+      <a href="#">Gel Fire</a>
+      <a href="#">Lamp Bases</a>
+      <a href="#">Stamps</a>
+  </div>
+</div>
+  <div class="dropdown">
+    <li class="button1 dropdown-toggle"><a>Furniture</a></li>
+    <div class="dropdown-content">
+      <a href="#">Living Room</a>
+      <a href="#">Sleeping Quarters</a>
+      <a href="#">Multi-room Use</a>
+      <a href="#">Kid Stuff</a>
+      <a href="#">Home Office</a>
+      <a href="#">Fun & Games</a>
+  </div>
+  </div>
+  <div class="ex1">
+    <h2>Welcome to the  number 1 online shop</h2>
+ </div>
+  <!--<div class="col-sm-3">
 
-<div class="pagination">
-    <span class="step-links">
-        {% if object_list.has_previous %}
+    <form method='get' action=''>
+      <input type='text' name='q' placeholder='Search posts' value='{{ request.GET.q }}'/>
+      <input type='submit' value='search'/>
+    </form>-->
+ {% for obj in object_list %}
+    <span class="current">
+    <div class="col-lg-3 col-md-3 col-sm-3">
+      <!--<div class="thumbnail">
+        <li class="span5">-->
+        {% if obj.image %}<img style="width: 200px; height: 200px;" src='{{ obj.image.url }}'
+          class='d-flex align-self-start mr-3' />{% endif %}
+        <div class="caption">
+          <h3><a href='{{ obj.get_absolute_url }}'>{{ obj.title |linebreaks|truncatechars:25 }} </a></h3>
+          <p>{{ obj.description|linebreaks|truncatechars:30 }}</p>
+            {% if obj.user.get_full_name %}<p>Distributor: {{ obj.user.get_full_name }}</p>{% endif %}
+          <p><a href="{{ obj.get_absolute_url }}" class="btn btn-default" role="button">Order</a>
+          <a href="#" class="btn btn-default" role="button">USD{{ obj.price}}</a></p>
+          <p><small>{{ obj.timestamp|timesince }} ago</small></p>
+      </div>
+    </div>
+
+  </span>
+  {% endfor %}
+
+    <div class="pagination">
+        <span class="step-links">
+          {% if object_list.has_previous %}
             <a href="?page={{ object_list.previous_page_number }}">previous</a>
-        {% endif %}
+          {% endif %}
 
-        <span class="current">
+          <span class="current">
             Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
-        </span>
+          </span>
 
-        {% if object_list.has_next %}
+          {% if object_list.has_next %}
             <a href="?page={{ object_list.next_page_number }}">next</a>
-        {% endif %}
-    </span>
-</div>
-</div>
-
-
+          {% endif %}
+      </span>
+    </div>
+  </div>
+</body>
 
 {% endblock content %}

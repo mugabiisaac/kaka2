@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 <!--DOCTYPE html -->
 <html>
 
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 
+<<<<<<< HEAD
     <link rel='stylesheet' href='{% static "css/base.css" %}' />
     <style>
         {% block style %}{% endblock style %}
@@ -27,6 +28,15 @@
         }(document, 'script', 'facebook-jssdk'));
     </script>
 
+=======
+<!--<link rel='stylesheet' href='{% static "css/base.css" %}' />-->
+<link rel="stylesheet" href="/static/css/base.css"/>
+
+<link rel="stylesheet" href="/static/css/login.css"/>
+<style>
+{% block style %} {% endblock style %}
+</style>
+>>>>>>> First commit
 </head>
 <body>
 
@@ -36,10 +46,12 @@
 </div>
 
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<!-- Latest compiled and minified JavaScript -->
+
+
 
 
 </body>
 
 </html>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
