@@ -38,7 +38,7 @@
 
 .selector .selector-filter {
     background: white;
-    border: 1px solid #ccc;
+    border: 0 1px solid #ccc;
     border-width: 0 1px;
     padding: 8px;
     color: #999;

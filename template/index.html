@@ -152,7 +152,7 @@ h2 {
 
 }
 
-@-webkit-keyframes "bannermove" {
+@-webkit-keyframes bannermove {
  0% {
    margin-left: 0px;
  }
@@ -162,7 +162,7 @@ h2 {
 
 }
 
-@-ms-keyframes "bannermove" {
+@-ms-keyframes bannermove {
  0% {
    margin-left: 0px;
  }
@@ -172,7 +172,7 @@ h2 {
 
 }
 
-@-o-keyframes "bannermove" {
+@-o-keyframes bannermove {
  0% {
    margin-left: 0px;
  }
@@ -392,7 +392,7 @@ footer {
 <p class="serif">Kaka~online</p>
 {% if user.is_authenticated %}
   <ul class="nav navbar-nav navbar-right">
-    <li><a href="{% url 'auth_login' %}" class="button2" role="button2">Buy</a></li>
+    <li><a href="{% url 'posts:list' %}" class="button2" role="button2">Buy</a></li>
 
 
     <li class="button2"><a href="{% url 'auth_login' %}" class="button2" role="button2">Login</a></li>
