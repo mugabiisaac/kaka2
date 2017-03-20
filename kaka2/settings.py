@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'home',
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -126,23 +126,19 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-STARICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, STATIC_URL),
 ]
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST ='smtp.gmail.com'
-EMAIL_HOST_USER ='trayforduganda@gmail.com'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'trayforduganda@gmail.com'
 EMAIL_HOST_PASSWORD = 'Kisitu1234'
 SERVER_EMAIL = 'trayforduganda@gmail.com'
 DEFAULT_FORM_EMAIL = 'blog'
-
-
-
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media_cdn")
 MEDIA_URL = "/media/"
