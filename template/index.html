@@ -603,6 +603,7 @@ function myFunction() {
       {% if user.is_authenticated %}
       <ul class="nav navbar-nav navbar-right">
         <li><a href="{% url 'posts:list' %}" class="button2" role="button2">Buy</a></li>
+        <li><a href="{% url 'posts:create' %}" class="button2" role="button2">Sell</a></li>
 
         <li class="button2"><a href="{% url 'auth_login' %}" class="button2" role="button2">Login</a></li>
         <li><a href="{% url 'auth_login' %}" class="button2" role="button2">Contact us</a></li>

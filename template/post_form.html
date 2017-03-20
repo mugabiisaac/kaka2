@@ -2,12 +2,109 @@
 
 
 {% block content %}
-<div class='col-sm-6 col-sm-offset-3'>
-<h1>Form</h1>
+<body>
+  <div class="container">
+    <p class="serif">Kaka~online</p>
+    {% if user.is_authenticated %}
+      <ul class="nav navbar-nav navbar-right">
+      <!--  <li><a href="{% url 'posts:list' %}" class="button2" role="button2">Buy</a></li>
+        <li><a href="{% url 'posts:create' %}" class="button2" role="button2">Sell</a></li>
 
-<form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
-{{ form.as_p }}
-<input type='submit' class='btn btn-default' value='Create Post' />
-</form>
+        <li class="button2"><a href="{% url 'auth_login' %}" class="button2" role="button2">Login</a></li>
+        <li><a href="{% url 'auth_login' %}" class="button2" role="button2">Contact us</a></li>
+        <form method='get' action=''>
+          <input type='text' name='q' placeholder='Search' value='{{ request.GET.q }}'/>
+          <input type='button' value='search'/>
+        </form>-->
+
+      </ul>
+    {% endif %}
+
+    <hr/>
+      <dl>
+      <div class="dropdown">
+        <li class="button1"><a>Electronics</a></li>
+      <div class="dropdown-content">
+        <a href="{% url 'posts:create' %}">Computers</a>
+        <a href="{% url 'posts:create' %}">phones</a>
+        <a href="{% url 'posts:create' %}">Sound systems</a>
+        <a href="{% url 'posts:create' %}">Televisions</a>
+        <a href="{% url 'posts:create' %}">Home Appliances</a>
+        <a href="{% url 'posts:create' %}">Game consoles</a>
+        <a href="{% url 'posts:create' %}">washing machines</a>
+        <a href="{% url 'posts:create' %}">Kitchen appliances</a>
+        <a href="{% url 'posts:create' %}">Printers</a>
+        <a href="{% url 'posts:create' %}">cameras</a>
+      </div>
+    </div>
+
+      <div class="dropdown">
+        <li class="button1"><a>Jewelary</a></li>
+      <div class="dropdown-content">
+        <a href="#">Hair and head ornaments</a>
+        <a href="#">Neck</a>
+        <a href="#">Arms</a>
+        <a href="#">Hands</a>
+        <a href="#">Body</a>
+        <a href="#">Feet</a>
+        <a href="#">Special functions</a>
+        <a href="#">Components</a>
+      </div>
+    </div>
+
+      <div class="dropdown">
+        <li class="button1"><a>Cosmetics</a></li>
+      <div class="dropdown-content">
+        <a href="#">Face</a>
+        <a href="#">Cheeks</a>
+        <a href="#">Eyebrows and Eyes</a>
+        <a href="#">Lips</a>
+      </div>
+      </div>
+
+      <div class="dropdown">
+        <li class="button1"><a>Home-decor</a></li>
+      <div class="dropdown-content">
+        <a href="#">Lanterns</a>
+        <a href="#">Wall Hangings</a>
+        <a href="#">Mirrors</a>
+        <a href="#">Photo Frames</a>
+        <a href="#">Gel Fire</a>
+        <a href="#">Lamp Bases</a>
+        <a href="#">Stamps</a>
+      </div>
+      </div>
+
+    <div class="dropdown">
+      <li class="button1 dropdown-toggle"><a>Furniture</a></li>
+      <div class="dropdown-content">
+        <a href="#">Living Room</a>
+        <a href="#">Sleeping Quarters</a>
+        <a href="#">Multi-room Use</a>
+        <a href="#">Kid Stuff</a>
+        <a href="#">Home Office</a>
+        <a href="#">Fun & Games</a>
+      </div>
+    </div>
+  </dl>
+    <!--<div class="ex1">
+      <h2>Welcome to the  number 1 online shop</h2>
+    </div>-->
+
+<div class='col-sm-6 col-sm-offset-3'>
+<div class="thumbnail">
+  <div class="caption">
+    <h1>Create Product</h1>
+
+    <form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
+      {{ form.as_p }}
+
+      <input type='submit' class='btn btn-default' value='Post Item' />
+
+    </form>
+  </div>
 </div>
+</div>
+
+</body>
 {% endblock content %}

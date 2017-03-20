@@ -99,8 +99,13 @@
           <h3><a href='{{ obj.get_absolute_url }}'>{{ obj.title |linebreaks|truncatechars:25 }} </a></h3>
           <p>{{ obj.description|linebreaks|truncatechars:30 }}</p>
             {% if obj.user.get_full_name %}<p>Distributor: {{ obj.user.get_full_name }}</p>{% endif %}
-          <p><a href="{{ obj.get_absolute_url }}" class="btn btn-default" role="button">Order</a>
-          <a href="#" class="btn btn-default" role="button">USD{{ obj.price}}</a></p>
+          <p><a href="{{ obj.get_absolute_url }}" class="btn btn-default" role="button">details</a>
+          <a href="#" class="btn btn-default" role="button">USD{{ obj.price }}</a></p>
+          <div id="cartAdd">
+            <button class="add_cart_large">Add to Cart</button>
+            <!--<input type="text" size="4" maxlength="6" value=" " name="cart_quantity"> -->
+            <input type="hidden" value="139" name="products_id">
+          </div>
           <p><small>{{ obj.timestamp|timesince }} ago</small></p>
       </div>
     </div>
