@@ -34,16 +34,17 @@ def post_detail(request, detail_id=None):  # retrieve
     # if not request.user.is_staff or not request.user.is_superuser:
     # raise HTTP404
 
-<<<<<<< HEAD
-    share_string = quote_plus(instance.content)
-=======
+
+    share_string = quote_plus(instance.description)
+
 def post_detail(request, id=None):  #retrieve
     instance = get_object_or_404(Post, id=id)
     #if instance.publish > timezone.now().date() or instance.draft:
         #if not request.user.is_staff or not request.user.is_superuser:
             #raise HTTP404
     share_string = quote_plus(instance.description)
->>>>>>> First commit
+
+
     context = {
         "title": instance.title,
         "instance": instance,

@@ -9,10 +9,7 @@ from django.utils import timezone
 from django.utils.text import slugify
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> First commit
+   
 # Create your models here.
 class PostManager(models.Manager):
     def all(self, *args, **kwargs):
@@ -24,6 +21,7 @@ def upload_location(instance, filename):
     # filename, extension = filename.split(".")
     # return "%s/%s.%s" %(instance.id, instance.id, extension)
     return "%s/%s" % (instance.id, filename)
+
 
 
 

@@ -1,9 +1,10 @@
-<<<<<<< HEAD
-from django.conf.urls import url
-=======
+
+#from django.conf.urls import url
+
+
 from django.conf.urls import include, url
 from django.contrib import admin
->>>>>>> First commit
+
 
 from .views import (
     post_list,

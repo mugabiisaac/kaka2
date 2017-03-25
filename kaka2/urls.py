@@ -23,14 +23,20 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 
+
 urlpatterns = [
     # url(r'^$', 'home.views.index'),
     url(r'^$', TemplateView.as_view(template_name='index.html')),
     url(r'^admin/', admin.site.urls),
     url(r'^posts/', include("posts.urls", namespace='posts')),
-
+    
     url(r'^accounts/', include('registration.backends.hmac.urls')),
     url(r'^login/', TemplateView.as_view(template_name="registration/login.html")),
+
+    #url(r'^accounts/',include('registration.backends.hmac.urls')),
+    #url(r'^login/', TemplateView.as_view(template_name="login.html")),
+    #url(r'^posts/', TemplateView.as_view(template_name="posts.html"))
+
 
     #url(r'^accounts/',include('registration.backends.hmac.urls')),
     #url(r'^login/', TemplateView.as_view(template_name="login.html")),
