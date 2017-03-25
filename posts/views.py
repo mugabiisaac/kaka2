@@ -7,6 +7,8 @@ from django.http import HttpResponseRedirect, Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import PostForm
 from .models import Post
+
+from django.core.urlresolvers import reverse
 # Create your views here.
 
 
@@ -32,7 +34,17 @@ def post_detail(request, detail_id=None):  # retrieve
     # if not request.user.is_staff or not request.user.is_superuser:
     # raise HTTP404
 
-    share_string = quote_plus(instance.content)
+
+    share_string = quote_plus(instance.description)
+
+def post_detail(request, id=None):  #retrieve
+    instance = get_object_or_404(Post, id=id)
+    #if instance.publish > timezone.now().date() or instance.draft:
+        #if not request.user.is_staff or not request.user.is_superuser:
+            #raise HTTP404
+    share_string = quote_plus(instance.description)
+
+
     context = {
         "title": instance.title,
         "instance": instance,
@@ -52,6 +64,9 @@ def post_list(request):
                 Q(user__first_name__icontains=query) |
                 Q(user__last_name__icontains=query)
                 )
+        #return HttpResponseRedirect(reverse('posts'))
+        return render(request, '/post_list.html', {'posts': post})
+
 
     paginator = Paginator(queryset_list, 8)  # Show 25 contacts per page
     page_request_var = "page"

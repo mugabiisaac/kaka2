@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'posts',
     'home',
+    'easy_thumbnails',
+
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -105,6 +107,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+THUMBNAIL_ALIASES = {
+    '': {
+        'avatar': {'size': (50, 50), 'crop': True},
+    },
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
@@ -127,7 +135,13 @@ STATIC_URL = '/static/'
 
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, STATIC_URL),
+
+    #os.path.join(BASE_DIR, STATIC_URL),
+
+
+    os.path.join(BASE_DIR, "static"),
+    #'/static/'
+
 ]
 
 
