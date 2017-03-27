@@ -10,7 +10,7 @@ body {
     font-size: 14px;
     font-family: "Roboto","Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
     color: #333;
-    background: yellow;
+    background: white;
 }
 
 /* LINKS */
@@ -155,8 +155,8 @@ code strong {
 
 hr {
     clear: both;
-    color: #eee;
-    background-color: #eee;
+    color: #447e9b;
+    background-color: #447e9b;
     height: 1px;
     border: none;
     margin: auto;
@@ -1001,8 +1001,8 @@ p.serif {
 }
 
 div.ex1 {
-    width: 1072px;
-    margin-left: -100px;
+    width: 1272px;
+    margin-left: -90px;
     margin-top: 0px;
     padding: 50px  ;
     background: RGB(229, 231, 233);
@@ -1349,13 +1349,11 @@ body {font-family: Verdana,sans-serif;margin:0}
   .prev, .next,.text {font-size: 11px}
 }
 
-footer {
-
-   bottom:0;
-
+.footer {
+   margin-bottom: 0;
    margin-left: -100px;
    margin-right: -47px;
-   height:350px;
+   height:150px;
    background:#6cf;
 }
 
@@ -1394,4 +1392,15 @@ footer {
          -o-transition: all 200ms ease-out;
             transition: all 200ms ease-out;
 
+}
+
+div.container1  {
+    font-family:
+    color: RGB(33, 47, 61);
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-right: 0%;
+    transform: translate(-50%);
 }

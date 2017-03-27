@@ -10,7 +10,7 @@ body {
     font-size: 14px;
     font-family: "Roboto","Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
     color: #333;
-    background: #fff;
+    background: white;
 }
 
 /* LINKS */
@@ -155,11 +155,13 @@ code strong {
 
 hr {
     clear: both;
-    color: #eee;
+    color: #447e9b;
     background-color: #eee;
     height: 1px;
     border: none;
-    margin: 0;
+    margin: auto;
+    margin-right: -32px;
+    margin-left: -100px;
     padding: 0;
     font-size: 1px;
     line-height: 1px;
@@ -999,8 +1001,8 @@ p.serif {
 }
 
 div.ex1 {
-    width: 1500px;
-    margin-left: -100px;
+    width: 1272px;
+    margin-left: -90px;
     margin-top: 0px;
     padding: 50px  ;
     background: RGB(229, 231, 233);
@@ -1008,13 +1010,18 @@ div.ex1 {
 }
 
 ul {
-
     list-style-type: none;
     margin-top: 0;
-    margin-left: 15px;
+    margin-left: 0;
+    margin-right: 0;
     padding: 15px 2px;
     overflow: hidden;
     text-align: center;
+}
+
+ex2 {
+  margin-right: -100px;
+
 }
 
 h2 {
@@ -1213,6 +1220,7 @@ li a {
 .dropdown {
     position: relative;
     display: inline-block;
+    margin-left: 0;
 
 }
 
@@ -1341,10 +1349,58 @@ body {font-family: Verdana,sans-serif;margin:0}
   .prev, .next,.text {font-size: 11px}
 }
 
-footer {
-
-   bottom:0;
-   width:100%;
-   height:350px;
+.footer {
+   margin-bottom: 0;
+   margin-left: -100px;
+   margin-right: -47px;
+   height:150px;
    background:#6cf;
+}
+
+
+.add_to_cart{
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    width: 152px;
+    font-size: 15px;
+    margin-left: -78px;
+    border: 2px solid #fff;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px 0;
+    opacity: 0;
+    -webkit-transition: all 200ms ease-out;
+       -moz-transition: all 200ms ease-out;
+         -o-transition: all 200ms ease-out;
+            transition: all 200ms ease-out;
+
+}
+
+.add_to_cart:hover{
+    background: #fff;
+    color: #5ff7d2;
+    cursor: pointer;
+}
+
+.make3D.animate .add_to_cart{
+    opacity:1;
+    -webkit-transition: all 200ms ease-out;
+       -moz-transition: all 200ms ease-out;
+         -o-transition: all 200ms ease-out;
+            transition: all 200ms ease-out;
+
+}
+
+div.container1  {
+    font-family:
+    color: RGB(33, 47, 61);
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-right: 0%;
+    transform: translate(-50%);
 }
