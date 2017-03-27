@@ -5,386 +5,15 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-{% block style %}
+<!--{% block style %}
 
 <style>
 
-div.polaroid {
-    display: block;
-    text-align: center;
-    padding: 5px 8px;
-    margin-right: -50px;
-    text-decoration: none;
-    color: RGB(189, 195, 199);
-
-}
-
-p.serif {
-  display: inline-block;
-  color: RGB(93, 109, 126);
-  text-align: left;
-  font-size: 30px;
-  padding: 5px 18px;
-  text-decoration: inherit;
-  font-family: Angsana New;
-
-}
-
-div.ex1 {
-    width: 1500px;
-    margin-left: -100px;
-    margin-top: 0px;
-    padding: 50px  ;
-    background: RGB(229, 231, 233);
-
-}
-
-ul {
-
-    list-style-type: none;
-    margin-top: 0;
-    margin-left: 15px;
-    padding: 15px 2px;
-    overflow: hidden;
-    text-align: center;
-}
-
-h2 {
-    font-family: Bernard MT Condensed;
-    color: white;
-    margin: 0;
-    position: absolute;
-    top: 35%;
-    left: 30%;
-    margin-right: 0%;
-    transform: translate(-50%);
-
-    -webkit-animation: jump 1.5s ease 0s infinite normal ;
-  animation: jump 1.5s ease 0s infinite normal ;
-}
-
-@-webkit-keyframes jump {
- 0%{
- -webkit-transform: translateY(0);
- transform: translateY(0);
- }
- 20%{
- -webkit-transform: translateY(0);
- transform: translateY(0);
- }
- 40%{
- -webkit-transform: translateY(-30px);
- transform: translateY(-30px);
- }
- 50%{
- -webkit-transform: translateY(0);
- transform: translateY(0);
- }
- 60%{
- -webkit-transform: translateY(-15px);
- transform: translateY(-15px);
- }
- 80%{
- -webkit-transform: translateY(0);
- transform: translateY(0);
- }
- 100%{
- -webkit-transform: translateY(0);
- transform: translateY(0);
- }
-}
-
-@keyframes jump {
- 0%{
- transform: translateY(0);
- }
- 20%{
- transform: translateY(0);
- }
- 40%{
- transform: translateY(-30px);
- }
- 50%{
- transform: translateY(0);
- }
- 60%{
- transform: translateY(-15px);
- }
- 80%{
- transform: translateY(0);
- }
- 100%{
- transform: translateY(0);
- }
-
-}
-
-.photobanner{
-  height: auto;
-  width:3550px;
-  margin-bottom:80px;
-}
-.first{
-   -webkit-animation: bannermove 30s linear infinite;
-       -moz-animation: bannermove 30s linear infinite;
-        -ms-animation: bannermove 30s linear infinite;
-         -o-animation: bannermove 30s linear infinite;
-            animation: bannermove 30s linear infinite;
-}
-
-@keyframes "bannermove" {
- 0% {
-    margin-left: 0px;
- }
- 100% {
-    margin-left: -2455px;
- }
-
-}
-
-@-moz-keyframes bannermove {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -2455px;
- }
-
-}
-
-@-webkit-keyframes bannermove {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -2455px;
- }
-
-}
-
-@-ms-keyframes bannermove {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -2455px;
- }
-
-}
-
-@-o-keyframes bannermove {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -2455px;
- }
-
-}
-
-.photobanner img {
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-}
-
-.photobanner img:hover{
-
-   -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-    cursor: pointer;
-
-    -webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
-    -moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
-    box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
-}
-
-li {
-    float: left;
-}
-
-li a {
-      display: inline-block;
-      color: RGB(25,0,0);
-      text-align: center;
-      padding: 15px 38px;
-      margin-right: 0;
-      text-decoration: none;
-
-}
-
-.dropbtn {
-        background-color: RGB(236, 240, 241);
-        border: none;
-        color: black;
-        padding: 1px 0;
-        text-align: center;
-        text-decoration: none;
-        display: block;
-        font-size: 8px;
-        cursor: pointer;
-}
-
-.button1 {
-        background-color: RGB(236, 240, 241);
-        border: none;
-        color: black;
-        padding: 0;
-        text-align: center;
-        text-decoration: none;
-        display: block;
-        font-size: 12px;
-        cursor: pointer;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: RGBA(0,0,0,0.35);
-    min-width: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    margin-top: 47px;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 2px 6px;
-    text-decoration: none;
-    display: block;
-    margin-top: 0;
-}
-
-.dropdown-content a:hover {background-color: background: rgba(0, 0, 0, 0.85);}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-
-}
-
-* {box-sizing:border-box}
-body {font-family: Verdana,sans-serif;margin:0}
-.mySlides {display:none}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor:pointer;
-  height: 13px;
-  width: 13px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1s;
-  animation-name: fade;
-  animation-duration: 20s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
-}
-
-footer {
-
-   bottom:0;
-   width:100%;
-   height:350px;
-   background:#6cf;
-}
 
 
 </style>
 
-{% endblock style %}
+{% endblock style %}-->
 </head>
 
 {% block content %}
@@ -393,14 +22,13 @@ footer {
 {% if user.is_authenticated %}
   <ul class="nav navbar-nav navbar-right">
     <li><a href="{% url 'posts:list' %}" class="button2" role="button2">Buy</a></li>
-
-
-    <li class="button2"><a href="{% url 'auth_login' %}" class="button2" role="button2">Login</a></li>
-    <li><a href="{% url 'auth_login' %}" class="button2" role="button2">Contact us</a></li>
-    <form method='get' action=''>
+    <li><a href="{% url 'posts:create' %}" class="button2" role="button2">Sell</a></li>
+    <li><a href="{% url 'auth_login' %}" class="button2" role="button">Login</a></li>
+    <li><a href="{% url 'registration_register' %}" class="button2" role="button2">Signup</a></li>
+    <li><form method='get' action=''>
       <input type='text' name='q' placeholder='Search' value='{{ request.GET.q }}'/>
       <input type='button' value='search'/>
-    </form>
+    </form></li>
 
 
   </ul>
@@ -408,6 +36,7 @@ footer {
 
 
 <hr/>
+<br/>
 
 
 <div class="dropdown">
@@ -529,6 +158,8 @@ footer {
     <span class="dot"></span>
   </div>
 </div>
+
+
 <script>
 var slideIndex = 0;
 showSlides();
@@ -560,19 +191,6 @@ function myFunction() {
     }
 }
 </script>
-<hr/>
-
-
-<footer>
-  <ul>
-    <p>Kaka~online,<br/>P.O.BOX: 1997 Kampala, <br/>Uganda;<br/></p>
-    <p>Contact information: <a href="mailto:imugabi1@gmail.com">imugabi1@gmail.com</a>.</p>
-  </ul>
-</footer>
-
-
-
-
 
 
 {% for obj in object_list %}
@@ -589,196 +207,14 @@ function myFunction() {
   </div>
 </div>
 {% endfor %}
+
+<div class="footer">
+
+    <ul><p>Kaka~online,<br/>P.O.BOX: 1997 Kampala, <br/>Uganda;<br/></p>
+    <p>Contact information: <a href="mailto:imugabi1@gmail.com">imugabi1@gmail.com</a>.</p></ul>
+
+</div>
+
+
 </body>
-
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-{% block content %}
-
-
-  <body>
-    <div class="container">
-      <p class="serif">Kaka~online</p>
-      {% if user.is_authenticated %}
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="{% url 'posts:list' %}" class="button2" role="button2">Buy</a></li>
-        <li><a href="{% url 'posts:create' %}" class="button2" role="button2">Sell</a></li>
-
-        <li class="button2"><a href="{% url 'auth_login' %}" class="button2" role="button2">Login</a></li>
-        <li><a href="{% url 'auth_login' %}" class="button2" role="button2">Contact us</a></li>
-        <form method='get' action=''>
-          <input type='text' name='q' placeholder='Search' value='{{ request.GET.q }}'/>
-          <input type='button' value='search'/>
-        </form>
-
-      </ul>
-      {% endif %}
-
-      <hr/>
-        <dl>
-        <div class="dropdown">
-          <li class="button1"><a>Electronics</a></li>
-        <div class="dropdown-content">
-          <a href="#">Computers</a>
-          <a href="#">phones</a>
-          <a href="#">Sound systems</a>
-          <a href="#">Televisions</a>
-          <a href="#">Home Appliances</a>
-          <a href="#">Game consoles</a>
-          <a href="#">washing machines</a>
-          <a href="#">Kitchen appliances</a>
-          <a href="#">Printers</a>
-          <a href="#">cameras</a>
-        </div>
-        </div>
-
-        <div class="dropdown">
-          <li class="button1"><a>Jewelary</a></li>
-        <div class="dropdown-content">
-          <a href="#">Hair and head ornaments</a>
-          <a href="#">Neck</a>
-          <a href="#">Arms</a>
-          <a href="#">Hands</a>
-          <a href="#">Body</a>
-          <a href="#">Feet</a>
-          <a href="#">Special functions</a>
-          <a href="#">Components</a>
-        </div>
-        </div>
-
-        <div class="dropdown">
-          <li class="button1"><a>Cosmetics</a></li>
-        <div class="dropdown-content">
-          <a href="#">Face</a>
-          <a href="#">Cheeks</a>
-          <a href="#">Eyebrows and Eyes</a>
-          <a href="#">Lips</a>
-        </div>
-        </div>
-
-        <div class="dropdown">
-          <li class="button1"><a>Home-decor</a></li>
-        <div class="dropdown-content">
-          <a href="#">Lanterns</a>
-          <a href="#">Wall Hangings</a>
-          <a href="#">Mirrors</a>
-          <a href="#">Photo Frames</a>
-          <a href="#">Gel Fire</a>
-          <a href="#">Lamp Bases</a>
-          <a href="#">Stamps</a>
-        </div>
-        </div>
-
-      <div class="dropdown">
-        <li class="button1 dropdown-toggle"><a>Furniture</a></li>
-        <div class="dropdown-content">
-          <a href="#">Living Room</a>
-          <a href="#">Sleeping Quarters</a>
-          <a href="#">Multi-room Use</a>
-          <a href="#">Kid Stuff</a>
-          <a href="#">Home Office</a>
-          <a href="#">Fun & Games</a>
-        </div>
-      </div>
-    </dl>
-      <div class="ex1">
-        <h2>Welcome to the  number 1 online shop</h2>
-      </div>
-
-      <div class="slideshow-container">
-
-
-        <div class="mySlides fade">
-          <div class="numbertext">1 / 3</div>
-            <img src="http://www.mridulbearing.in/images/abt-koyo.jpg" style="width:30%">
-            <img src="https://pbs.twimg.com/media/CQAUCmHXAAQfL7r.jpg" style="width:30%">
-            <img src="https://s-media-cache-ak0.pinimg.com/564x/10/3b/58/103b581642f87991312c0ff20f453b6d.jpg" style="width:30%">
-            <div class="text">Caption Text</div>
-        </div>
-
-        <div class="mySlides fade">
-          <div class="numbertext">2 / 3</div>
-            <img src="https://n4.sdlcdn.com/imgs/a/v/5/Oriflame-Pink-Fabulous-Fuchsia-Lipstick-SDL912936824-1-e5bb3.jpg" style="width:30%">
-            <img src="https://cdn.shopify.com/s/files/1/0991/4944/products/eyepearlcorrectprim_grande.jpg?v=1453403784" style="width:30%">
-            <img src="http://gd.image-gmkt.com/li/472/142/537142472.g_260-w-st_g.jpg" style="width:30%">
-            <div class="text">Caption Two</div>
-          </div>
-
-          <div class="mySlides fade">
-            <div class="numbertext">3 / 5</div>
-            <img src="https://photos.prnewswire.com/prnvar/20160826/401874?max=1600" style="width:30%">
-            <img src="http://content.abt.com/media/brands/sonos/images/sonos-shop-all-2017-mobile.jpg" style="width:30%">
-            <img src="http://content.abt.com/image.php/2_ME21H706BSS.jpg?image=/images/products/BDP_Images/2_ME21H706BSS.jpg&canvas=1&quality=100&min_w=450&min_h=320&ck=425" style="width:50%">
-            <div class="text">Caption Three</div>
-          </div>
-
-          <div class="mySlides fade">
-            <div class="numbertext">4 / 5</div>
-            <img src="https://s3-eu-west-1.amazonaws.com/ch-production-uploads/wp-content/uploads/2017/01/Home-Decor-on-CROWDYHOUSE.jpg" style="width:70%">
-            <div class="text">Caption Three</div>
-          </div>
-
-          <div class="mySlides fade">
-            <div class="numbertext">5 / 5</div>
-            <img src="https://images-na.ssl-images-amazon.com/images/I/61sllAABT-L._SL1200_.jpg" style="width:80%">
-            <div class="text">Caption Three</div>
-          </div>
-
-        </div>
-        <hr/>
-        <br>
-
-        <div style="text-align:center">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-      </div>
-  </body>
-    <script>
-      var slideIndex = 0;
-      showSlides();
-
-      function showSlides() {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("dot");
-      for (i = 0; i < slides.length; i++) {
-         slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex> slides.length) {slideIndex = 1}
-      for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " active";
-      setTimeout(showSlides, 18000); // Change image every 2 seconds
-  }
-
-
-  function myFunction() {
-      var x = document.getElementById("Demo");
-      if (x.classNmae.indexOf("w3-show") == -1) {
-          x.className += " w3-show";
-      } else {
-          x.className = x.className.replace(" w3-show", " ");
-      }
-  }
-  </script>
-
-
-
-    <footer>
-      <ul>
-        <p>Kaka~online,<br/>P.O.BOX: 1997 Kampala, <br/>Uganda;<br/></p>
-        <p>Contact information: <a href="mailto:imugabi1@gmail.com">imugabi1@gmail.com</a>.</p>
-      </ul>
-    </footer>
-
-
-{% endblock content %}
+{% endblock %}
