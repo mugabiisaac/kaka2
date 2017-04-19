@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 from django.core.mail import send_mail
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,7 +27,7 @@ SECRET_KEY = '3*nk71k4eg@+p)+^@zz9%xt@rt6ir9l8p+@#8b5t-*xz@lkzjb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [u'0.0.0.0']
 
 
 # Application definition
@@ -158,3 +159,23 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media_cdn")
 MEDIA_URL = "/media/"
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn")
+
+
+LOGIN_REDIRECT_URL = '/posts/'
+
+LOGOUT_REDIRECT_URL = '/'
+
+
+INITIAL_ORDER_STATUS = 'Pending'
+INITIAL_LINE_STATUS = 'Pending'
+ORDER_STATUS_PIPELINE ={
+    'Pending': ('Being processed', 'Cancelled',),
+    'Being Processed': ('Processed', 'cancelled',),
+    'Cancelled': (),
+}
+
+# Update database configuration with $DATABASE_URL.
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'

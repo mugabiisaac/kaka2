@@ -1,163 +1,135 @@
 <!DOCTYPE HTML>
 {% extends "base.html" %}
-<!--{% load static %}-->
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--{% block style %}
-
-<style>
-
-
-
-</style>
-
-{% endblock style %}-->
 </head>
+
+
 
 {% block content %}
 <body>
-<p class="serif">Kaka~online</p>
-{% if user.is_authenticated %}
-  <ul class="nav navbar-nav navbar-right">
-    <li><a href="{% url 'posts:list' %}" class="button2" role="button2">Buy</a></li>
-    <li><a href="{% url 'posts:create' %}" class="button2" role="button2">Sell</a></li>
-    <li><a href="{% url 'auth_login' %}" class="button2" role="button">Login</a></li>
-    <li><a href="{% url 'registration_register' %}" class="button2" role="button2">Signup</a></li>
-    <li><form method='get' action=''>
-      <input type='text' name='q' placeholder='Search' value='{{ request.GET.q }}'/>
-      <input type='button' value='search'/>
-    </form></li>
 
 
-  </ul>
-{% endif %}
+
+  <hr/>
+  <br/>
 
 
-<hr/>
-<br/>
-
-
-<div class="dropdown">
-  <li class="button1"><a>Electronics</a></li>
-  <div class="dropdown-content">
-    <a href="#">Computers</a>
-    <a href="#">phones</a>
-    <a href="#">Sound systems</a>
-    <a href="#">Televisions</a>
-    <a href="#">Home Appliances</a>
-    <a href="#">Game consoles</a>
-    <a href="#">washing machines</a>
-    <a href="#">Kitchen appliances</a>
-    <a href="#">Printers</a>
-    <a href="#">cameras</a>
+  <div class="dropdown">
+    <li class="button1"><a>Electronics</a></li>
+    <div class="dropdown-content">
+      <a href="#">Computers</a>
+      <a href="#">phones</a>
+      <a href="#">Sound systems</a>
+      <a href="#">Televisions</a>
+      <a href="#">Home Appliances</a>
+      <a href="#">Game consoles</a>
+      <a href="#">washing machines</a>
+      <a href="#">Kitchen appliances</a>
+      <a href="#">Printers</a>
+      <a href="#">cameras</a>
+   </div>
   </div>
-</div>
-<span>
-<div class="dropdown">
-  <li class="button1"><a>Jewelary</a></li>
-  <div class="dropdown-content">
-    <a href="#">Hair and head ornaments</a>
-    <a href="#">Neck</a>
-    <a href="#">Arms</a>
-    <a href="#">Hands</a>
-    <a href="#">Body</a>
-    <a href="#">Feet</a>
-    <a href="#">Special functions</a>
-    <a href="#">Components</a>
-  </div>
-</div>
 
-<div class="dropdown">
-  <li class="button1"><a>Cosmetics</a></li>
-  <div class="dropdown-content">
-    <a href="#">Face</a>
-    <a href="#">Cheeks</a>
-    <a href="#">Eyebrows and Eyes</a>
-    <a href="#">Lips</a>
-  </div>
-</div>
-
-<div class="dropdown">
-  <li class="button1"><a>Home-decor</a></li>
-  <div class="dropdown-content">
-    <a href="#">Lanterns</a>
-    <a href="#">Wall Hangings</a>
-    <a href="#">Mirrors</a>
-    <a href="#">Photo Frames</a>
-    <a href="#">Gel Fire</a>
-    <a href="#">Lamp Bases</a>
-    <a href="#">Stamps</a>
-  </div>
-</div>
-
-<div class="dropdown">
-  <li class="button1 dropdown-toggle"><a>Furniture</a></li>
-  <div class="dropdown-content">
-    <a href="#">Living Room</a>
-    <a href="#">Sleeping Quarters</a>
-    <a href="#">Multi-room Use</a>
-    <a href="#">Kid Stuff</a>
-    <a href="#">Home Office</a>
-    <a href="#">Fun & Games</a>
-  </div>
-</div>
-<div class="ex1">
-  <h2>Welcome to the  number 1 online shop</h2>
-</div>
-
-  <div class="slideshow-container">
-
-
-    <div class="mySlides fade">
-      <div class="numbertext">1 / 3</div>
-        <img src="http://www.mridulbearing.in/images/abt-koyo.jpg" style="width:30%">
-        <img src="https://pbs.twimg.com/media/CQAUCmHXAAQfL7r.jpg" style="width:30%">
-        <img src="https://s-media-cache-ak0.pinimg.com/564x/10/3b/58/103b581642f87991312c0ff20f453b6d.jpg" style="width:30%">
-      <div class="text">Caption Text</div>
+  <div class="dropdown">
+    <li class="button1"><a>Jewelary</a></li>
+    <div class="dropdown-content">
+      <a href="#">Hair and head ornaments</a>
+      <a href="#">Neck</a>
+      <a href="#">Arms</a>
+      <a href="#">Hands</a>
+      <a href="#">Body</a>
+      <a href="#">Feet</a>
+      <a href="#">Special functions</a>
+      <a href="#">Components</a>
     </div>
-
-    <div class="mySlides fade">
-      <div class="numbertext">2 / 3</div>
-        <img src="https://n4.sdlcdn.com/imgs/a/v/5/Oriflame-Pink-Fabulous-Fuchsia-Lipstick-SDL912936824-1-e5bb3.jpg" style="width:30%">
-        <img src="https://cdn.shopify.com/s/files/1/0991/4944/products/eyepearlcorrectprim_grande.jpg?v=1453403784" style="width:30%">
-        <img src="http://gd.image-gmkt.com/li/472/142/537142472.g_260-w-st_g.jpg" style="width:30%">
-      <div class="text">Caption Two</div>
+  </div>
+  <div class="dropdown">
+    <li class="button1"><a>Cosmetics</a></li>
+    <div class="dropdown-content">
+      <a href="#">Face</a>
+      <a href="#">Cheeks</a>
+      <a href="#">Eyebrows and Eyes</a>
+      <a href="#">Lips</a>
     </div>
-
-    <div class="mySlides fade">
-      <div class="numbertext">3 / 5</div>
-        <img src="https://photos.prnewswire.com/prnvar/20160826/401874?max=1600" style="width:30%">
-        <img src="http://content.abt.com/media/brands/sonos/images/sonos-shop-all-2017-mobile.jpg" style="width:30%">
-        <img src="http://content.abt.com/image.php/2_ME21H706BSS.jpg?image=/images/products/BDP_Images/2_ME21H706BSS.jpg&canvas=1&quality=100&min_w=450&min_h=320&ck=425" style="width:50%">
-      <div class="text">Caption Three</div>
+  </div>
+  <div class="dropdown">
+    <li class="button1"><a>Home-decor</a></li>
+    <div class="dropdown-content">
+      <a href="#">Lanterns</a>
+      <a href="#">Wall Hangings</a>
+      <a href="#">Mirrors</a>
+      <a href="#">Photo Frames</a>
+      <a href="#">Gel Fire</a>
+      <a href="#">Lamp Bases</a>
+      <a href="#">Stamps</a>
     </div>
-
-    <div class="mySlides fade">
-      <div class="numbertext">4 / 5</div>
-        <img src="https://s3-eu-west-1.amazonaws.com/ch-production-uploads/wp-content/uploads/2017/01/Home-Decor-on-CROWDYHOUSE.jpg" style="width:70%">
-      <div class="text">Caption Three</div>
+  </div>
+  <div class="dropdown">
+    <li class="button1 dropdown-toggle"><a>Furniture</a></li>
+    <div class="dropdown-content">
+      <a href="#">Living Room</a>
+      <a href="#">Sleeping Quarters</a>
+      <a href="#">Multi-room Use</a>
+      <a href="#">Kid Stuff</a>
+      <a href="#">Home Office</a>
+      <a href="#">Fun & Games</a>
     </div>
-
-    <div class="mySlides fade">
-      <div class="numbertext">5 / 5</div>
-        <img src="https://images-na.ssl-images-amazon.com/images/I/61sllAABT-L._SL1200_.jpg" style="width:80%">
-      <div class="text">Caption Three</div>
-    </div>
-
+  </div>
+  <div class="ex1">
+    <h2>Welcome to the  number 1 online shop</h2>
   </div>
 
-  <br>
+   <div class="slideshow-container">
+     <div class="mySlides fade">
+     <div class="numbertext">1 / 3</div>
+       <img src="http://www.mridulbearing.in/images/abt-koyo.jpg" style="width:30%">
+       <img src="https://pbs.twimg.com/media/CQAUCmHXAAQfL7r.jpg" style="width:30%">
+       <img src="https://s-media-cache-ak0.pinimg.com/564x/10/3b/58/103b581642f87991312c0ff20f453b6d.jpg" style="width:30%">
+       <div class="text">Caption Text</div>
+     </div>
 
-  <div style="text-align:center">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
+     <div class="mySlides fade">
+       <div class="numbertext">2 / 3</div>
+       <img src="https://n4.sdlcdn.com/imgs/a/v/5/Oriflame-Pink-Fabulous-Fuchsia-Lipstick-SDL912936824-1-e5bb3.jpg" style="width:30%">
+       <img src="https://cdn.shopify.com/s/files/1/0991/4944/products/eyepearlcorrectprim_grande.jpg?v=1453403784" style="width:30%">
+       <img src="http://gd.image-gmkt.com/li/472/142/537142472.g_260-w-st_g.jpg" style="width:30%">
+       <div class="text">Caption Two</div>
+     </div>
+
+     <div class="mySlides fade">
+       <div class="numbertext">3 / 5</div>
+       <img src="https://photos.prnewswire.com/prnvar/20160826/401874?max=1600" style="width:30%">
+       <img src="http://content.abt.com/media/brands/sonos/images/sonos-shop-all-2017-mobile.jpg" style="width:30%">
+       <img src="http://content.abt.com/image.php/2_ME21H706BSS.jpg?image=/images/products/BDP_Images/2_ME21H706BSS.jpg&canvas=1&quality=100&min_w=450&min_h=320&ck=425" style="width:50%">
+       <div class="text">Caption Three</div>
+     </div>
+
+     <div class="mySlides fade">
+       <div class="numbertext">4 / 5</div>
+       <img src="https://s3-eu-west-1.amazonaws.com/ch-production-uploads/wp-content/uploads/2017/01/Home-Decor-on-CROWDYHOUSE.jpg" style="width:70%">
+       <div class="text">Caption Three</div>
+     </div>
+
+     <div class="mySlides fade">
+       <div class="numbertext">5 / 5</div>
+       <img src="https://images-na.ssl-images-amazon.com/images/I/61sllAABT-L._SL1200_.jpg" style="width:80%">
+       <div class="text">Caption Three</div>
+     </div>
+
+     <br>
+
+     <div style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
   </div>
-</div>
 
 
 <script>
@@ -191,6 +163,9 @@ function myFunction() {
     }
 }
 </script>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/wow.min.js"></script>
 
 
 {% for obj in object_list %}

@@ -12,6 +12,7 @@ from .views import (
     post_detail,
     post_update,
     post_delete,
+    post_buy,
     )
 
 urlpatterns = [
@@ -21,4 +22,5 @@ urlpatterns = [
     url(r'^(?P<id>\d+)/$', post_detail, name='detail'),
     url(r'^(?P<id>\d+)/edit/$', post_update, name='update'),
     url(r'^(?P<id>\d+)/delete/$', post_delete),
+    url(r'^buy/(?P<id>\d+)/$', post_buy, name='buy'),
 ]

@@ -1,0 +1,16 @@
+altgraph==0.13
+appdirs==1.4.3
+dj-database-url==0.4.2
+Django==1.10.5
+django-registration==2.2
+easy-thumbnails==2.3
+gunicorn==19.7.1
+macholib==1.8
+modulegraph==0.14
+olefile==0.44
+packaging==16.8
+Pillow==4.0.0
+py2app==0.7.3
+pyparsing==2.2.0
+six==1.10.0
+whitenoise==3.3.0

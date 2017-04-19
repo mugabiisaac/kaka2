@@ -64,7 +64,7 @@
           cursor: pointer;
   }
 
-  
+
 
 </style>
 
@@ -80,19 +80,26 @@
     {% if form.errors %}
       <p>your username and password didn't match. please try again.</p>
     {% endif %}
-      <form method="post" action="django.contrib.auth">
-        {% csrf_token %}
-        {{ form.as_p }}
+    <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
 
-        <input class="button" type="submit" value="{% trans 'Login' %}" />
-        <input class="form-control" type="hidden" name="next" value="{{ next }}" />
+      <input class="button" type="submit" value="login" />
+      <input class="form-control" type="hidden" name="next" value=" " />
 
-      </form>
-      <p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>
-      <p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>!</p>
-
-    </div>
+    </form>
+    <p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>
+    <p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>!</p>
   </div>
+
 </body>
 {% endblock content %}
+{% block javascript %}
+
+<script>
+{% if not user.is_authenticated %}
+  $("ul.nav.navbar_nav.navbar-right").css("display","none");
+{% endif %}
+</script>
+{% endblock %}
 </html>
