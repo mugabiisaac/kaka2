@@ -2,20 +2,8 @@
 {% block content %}
 <body>
   <div class="container">
-    <p class="serif">Kaka~online</p>
-    {% if user.is_authenticated %}
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="{% url 'posts:list' %}" class="button2" role="button2">Buy</a></li>
-        <li><a href="{% url 'posts:create' %}" class="button2" role="button2">Sell</a></li>
-        <li><a href="{% url 'auth_logout' %}" class="button2" role="button">Logout</a></li>
-        <li><form method='get' action=''>
-          <input type='text' name='q' placeholder='Search' value='{{ request.GET.q }}'/>
-          <input type='button' value='search'/>
-       </form></li>
-      </ul>
-    {% endif %}
 
-    <hr/>
+
 
     <div class="dropdown">
       <li class="button1"><a>Electronics</a></li>
