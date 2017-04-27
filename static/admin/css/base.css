@@ -999,11 +999,16 @@ p.serif {
 }
 
 div.ex1 {
-    width: 1500px;
-    margin-left: -100px;
-    margin-top: 0px;
-    padding: 50px  ;
-    background: RGB(229, 231, 233);
+  width: 1272px;
+  margin-left: 90px;
+  margin-top: 0px;
+  padding: 500px  ;
+  background: RGB(229, 231, 233);
+  text-align: center;
+  top: 35%;
+  left: 60%;
+  margin-right: 0%;
+  transform: translate(-50%);
 
 }
 
@@ -1019,7 +1024,7 @@ ul {
 
 h2 {
     font-family: Bernard MT Condensed;
-    color: white;
+    color: black;
     margin: 0;
     position: absolute;
     top: 35%;
@@ -1027,11 +1032,11 @@ h2 {
     margin-right: 0%;
     transform: translate(-50%);
 
-    -webkit-animation: jump 1.5s ease 0s infinite normal ;
-  animation: jump 1.5s ease 0s infinite normal ;
+    /*-webkit-animation: jump 1.5s ease 0s infinite normal ;
+  animation: jump 1.5s ease 0s infinite normal ;*/
 }
 
-@-webkit-keyframes jump {
+/*@-webkit-keyframes jump {
  0%{
  -webkit-transform: translateY(0);
  transform: translateY(0);
@@ -1085,7 +1090,7 @@ h2 {
  transform: translateY(0);
  }
 
-}
+}*/
 
 .photobanner{
   height: auto;
@@ -1181,7 +1186,7 @@ li a {
       color: RGB(25,0,0);
       text-align: center;
       padding: 15px 38px;
-      margin-right: 0;
+      margin-right: 50px;
       text-decoration: none;
 
 }

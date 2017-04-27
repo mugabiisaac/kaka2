@@ -2,7 +2,7 @@
 {% block content %}
 <body>
 <div class="container">
-  
+
     <hr/>
 
 
@@ -14,21 +14,24 @@
     <h1>{{ instance.title }}</h1>
 
     <div class='col-sm-3 col-sm-offset-3'>
-      {% if instance.image %}
-        <img src='{{ instance.image.url }}' class='img-responsive' />
-      {% endif %}
-      <h1>{{ title }}</h1>
-      <p>{{ instance.description }}</p>
-      {% if instance.user.get_full_name %}
-        <p>Distributor: {{ instance.user.get_full_name }}</p>
-      {% endif %}
-      <hr/>
-      <p><a href="{% url 'posts:buy' instance.id %}", class="btn btn-default" role="button">buy</a>
-      <a href="#" class="btn btn-default" role="button">Add to Cart</a></p>
-      <p><a href=" " class="btn btn-default" role="button">USD{{ instance.price }}</a></p>
-      <p>Shipping: Free with USD30+ purchase.</p><hr/>
-      {{ instance.content|linebreaks }}
-      <p><small>{{ instance.timestamp|timesince }} ago</small></p>
+      <div id="thumbs">
+        {% if instance.image %}
+          <img src='{{ instance.image.url }}' class='img-responsive' />
+        {% endif %}
+        <h1>{{ title }}</h1>
+        <p>{{ instance.description }}</p>
+        {% if instance.user.get_full_name %}
+          <p>Distributor: {{ instance.user.get_full_name }}</p>
+        {% endif %}
+        <hr/>
+        <p><a href="{% url 'posts:buy' instance.id %}", class="btn btn-default" role="button">buy</a>
+        <a href="#" class="btn btn-default" role="button">Add to Cart</a></p>
+        <p><a href=" " class="btn btn-default" role="button">USD{{ instance.price }}</a></p>
+        <p>Shipping: Free with USD30+ purchase.</p><hr/>
+        {{ instance.content|linebreaks }}
+        <p><small>{{ instance.timestamp|timesince }} ago</small></p>
+        <span class="stretch"></span>
+      </div>
     </div>
 
 </div>

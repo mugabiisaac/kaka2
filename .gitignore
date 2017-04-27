@@ -42,3 +42,8 @@ Thumbs.db
 db.sqlite3
 *.pyc
 kaka2/lib
+.env
+venv
+staticfiles
+
+kaka2/settings/local.py

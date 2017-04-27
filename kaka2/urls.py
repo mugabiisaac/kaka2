@@ -37,9 +37,9 @@ urlpatterns = [
 
     url(r'^accounts/login/$', auth_views.login, name='login'),
     url(r'^success/', TemplateView.as_view(template_name="buy.html")),
-    url('^accounts/', include('django.contrib.auth.urls'))
+    url(r'^accounts/', include('django.contrib.auth.urls')),
 
-    #url(r'^login/$', auth_views.login, {'template_name': 'core/login.html'}, name='login')
+    url(r'^electronics/', TemplateView.as_view(template_name="electronics.html")),
     #url(r'^accounts/',include('registration.backends.hmac.urls')),
     #url(r'^login/', TemplateView.as_view(template_name="login.html")),
     #url(r'^posts/', TemplateView.as_view(template_name="posts.html"))

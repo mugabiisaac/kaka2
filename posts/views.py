@@ -1,5 +1,5 @@
 from urllib import quote_plus
-
+from django.conf import settings
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
@@ -54,7 +54,7 @@ def post_detail(request, id=None):  #retrieve
     return render(request, "post_detail.html", context)
 
 
-def post_list(request):
+def post_list(request, id=None):
     queryset_list = Post.objects.all()  # .order_by("-timestamp")
 
     query = request.GET.get("q")
@@ -68,6 +68,7 @@ def post_list(request):
         #return HttpResponseRedirect(reverse('posts'))
     #if not request.user.is_authenticated():
         #return HttpResponseRedirect('/')
+
 
         return render(request, '/post_list.html', {'posts': post})
 
@@ -85,7 +86,8 @@ def post_list(request):
         queryset = paginator.page(paginator.num_pages)
     context = {
         "object_list": queryset,
-        "title": "List"
+        "title": "List",
+
     }
     # if request.user.is_authenticated():
     #    context = {
@@ -206,12 +208,48 @@ def post_buy(self, id):
 
     instance = get_object_or_404(Post, id=id)
     print(instance)
-    #share_string = quote_plus(instance.description)
+    share_string = quote_plus(instance.description)
     #instance.user = request.user
-    # messages.success(request, "successfully purchased")
-    #context = {
-        #"title": instance.title,
-        #"instance": instance,
-        #"share_string": share_string,
-    #}
+    #messages.success(request, "successfully purchased")
+    context = {
+        "title": instance.title,
+        "instance": instance,
+        "share_string": share_string,
+    }
     return HttpResponseRedirect("/success/")
+
+
+def post_electronics(request, id):
+    queryset_list = Post.objects.all()
+    instance = get_object_or_404(Post, id=id)
+    print(instance)
+    share_string = quote_plus(instance.description)
+    instance.user = request.user
+
+    context = {
+        "title": instance.title,
+        "instance": instance,
+        "share_string": share_string,
+    }
+    return render(request, "electronics.html", context)
+
+def register (request):
+    #form = PostForm(request.POST or None, request.FILES or None)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.user = request.user
+        instance.save()
+        messages.success(request, "successful")
+        return HttpResponseRedirect(instance.get_absolute_url())
+    context = {
+        "form": form,
+    }
+    return render(request, "registration_complete.html", context)
+
+DEFAULT_REDIRECT_URL = getattr(settings, "DEFAULT_REDIRECT_URL", "http://www.kaka2.com")
+
+def wildcard_rediect(request, path=None):
+    new_url = DEFAULT_REDIRECT_URL
+    if path is not None:
+        new_url = DEFAULT_REDIRECT_URL + "/" + path
+    return HttpResponseRedirect(new_url)

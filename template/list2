@@ -835,3 +835,266 @@ class EventHandler(object):
                 event.line_quantites.create(
                     line=line, quantity=quantity)
                 return event
+
+
+
+registration
+                <style>
+                {% block style %}
+
+
+                p.serif {
+                  display: block;
+                  color: white;
+                  text-align: center;
+                  font-size: 30px;
+                  padding: 5px 18px;
+                  text-decoration: none;
+
+                }
+
+
+                div.container  {
+                    font-family:
+                    color: RGB(33, 47, 61);
+                    margin: 0;
+                    position: absolute;
+                    top: 30%;
+                    left: 50%;
+                    margin-right: 0%;
+                    line-height: 200%;
+                    transform: translate(-50%);
+                }
+
+
+                ul {
+                position: fixed;
+                        top: 0px;
+                        left: -70px;
+                        right: -70px;
+                    list-style-type: none;
+                    margin-top: 0;
+                    margin-left: 0;
+                    padding:0;
+                    overflow: hidden;
+                    background-color: black;
+                    font-family:
+                }
+
+
+
+
+                .button {
+                        background-color: RGB(252,243,207);
+                        border: none;
+                        color: black;
+                        padding: 6px 15px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 12px;
+                        cursor: pointer;
+                }
+
+                {% endblock style %}
+                </style>
+
+
+
+
+        login
+
+
+        <style>
+
+          body {
+                background-image:
+          }
+
+          p.serif {
+            display: block;
+            color: RGB(252,243,207);
+            text-align: center;
+            font-size: 30px;
+            padding: 5px 18px;
+            text-decoration: none;
+
+          }
+
+
+          div.container  {
+              font-family: Chalkduster;
+              color: RGB(33, 47, 61);
+              margin: 0;
+              position: absolute;
+              top: 30%;
+              left: 50%;
+              margin-right: 0%;
+              transform: translate(-50%);
+
+          }
+
+          ul {
+          position: fixed;
+                  top: 0px;
+                  left: -70px;
+                  right: -70px;
+              list-style-type: none;
+              margin-top: 0;
+              margin-left: 0;
+              padding:0;
+              overflow: hidden;
+              background-color: black;
+              font-family: Chalkduster;
+          }
+
+
+          .button {
+                  background-color: RGB(252,243,207);
+                  border: none;
+                  color: black;
+                  padding: 6px 15px;
+                  text-align: center;
+                  text-decoration: none;
+                  display: inline-block;
+                  font-size: 12px;
+                  cursor: pointer;
+          }
+
+
+
+        </style>
+
+
+        base.css
+
+
+        /*-webkit-animation: jump 1.5s ease 0s infinite normal ;
+        animation: jump 1.5s ease 0s infinite normal ;*/
+
+        @-webkit-keyframes jump {
+         0%{
+         -webkit-transform: translateY(0);
+         transform: translateY(0);
+         }
+         20%{
+         -webkit-transform: translateY(0);
+         transform: translateY(0);
+         }
+         40%{
+         -webkit-transform: translateY(-30px);
+         transform: translateY(-30px);
+         }
+         50%{
+         -webkit-transform: translateY(0);
+         transform: translateY(0);
+         }
+         60%{
+         -webkit-transform: translateY(-15px);
+         transform: translateY(-15px);
+         }
+         80%{
+         -webkit-transform: translateY(0);
+         transform: translateY(0);
+         }
+         100%{
+         -webkit-transform: translateY(0);
+         transform: translateY(0);
+         }
+        }
+
+        @keyframes jump {
+         0%{
+         transform: translateY(0);
+         }
+         20%{
+         transform: translateY(0);
+         }
+         40%{
+         transform: translateY(-30px);
+         }
+         50%{
+         transform: translateY(0);
+         }
+         60%{
+         transform: translateY(-15px);
+         }
+         80%{
+         transform: translateY(0);
+         }
+         100%{
+         transform: translateY(0);
+         }
+
+        }
+
+
+
+
+        base.html java
+
+        <script>
+          (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+
+
+
+photo baenner
+
+
+@keyframes "bannermove" {
+ 0% {
+    margin-left: 0px;
+ }
+ 100% {
+    margin-left: -2455px;
+ }
+
+}
+
+@-moz-keyframes bannermove {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2455px;
+ }
+
+}
+
+@-webkit-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2455px;
+ }
+
+}
+
+@-ms-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2455px;
+ }
+
+}
+
+@-o-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2455px;
+ }
+
+}

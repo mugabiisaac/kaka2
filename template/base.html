@@ -25,18 +25,10 @@
 
   </div>
 
-  <script>
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+
+  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>-->
 
     <p class="serif">Kaka~online</p>
 
@@ -50,10 +42,10 @@
           <li><a href="{% url 'auth_login' %}" class="button2" role="button">Login</a></li>
           <li><a href="{% url 'registration_register' %}" class="button2" role="button2">Signup</a></li>
         {% endif %}
-          <li><form method='get' action=''>
-            <input type='text' name='q' placeholder='Search' value='{{ request.GET.q }}'/>
+          <li><div method='get' action=''>
+            <input type='text' name='q' placeholder='' value='{{ request.GET.q }}'/>
             <input type='button' value='search'/>
-          </form></li>
+          </di></li>
 
       </ul>
       <hr/>

@@ -12,10 +12,10 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 from django.core.mail import send_mail
-import dj_database_url
+#import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,9 +25,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '3*nk71k4eg@+p)+^@zz9%xt@rt6ir9l8p+@#8b5t-*xz@lkzjb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = [u'0.0.0.0']
+ALLOWED_HOSTS = ['www.kaka2.co', 'kaka2.co']
 
 
 # Application definition
@@ -56,6 +56,10 @@ MIDDLEWARE_CLASSES = [
 ]
 
 ROOT_URLCONF = 'kaka2.urls'
+ROOT_HOSTCONF ='kaka.hosts'
+DEFAULT_HOST ='www'
+DEFAULT_REDIRECT_URL = "http://www.kaka2.co"
+PARENT_HOST = "kaka2.co"
 
 TEMPLATES = [
     {
@@ -175,7 +179,10 @@ ORDER_STATUS_PIPELINE ={
 }
 
 # Update database configuration with $DATABASE_URL.
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+#db_from_env = dj_database_url.config(conn_max_age=500)
+#DATABASES['default'].update(db_from_env)
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+#export DJANGO_SETTINGS_MODULE=kaka2.settings
+#heroku config:set DJANGO_SETTINGS_MODULE=kaka2.settings --account personal

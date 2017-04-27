@@ -1,0 +1,1 @@
+web: gunicorn zac.wsgi --log-file -
