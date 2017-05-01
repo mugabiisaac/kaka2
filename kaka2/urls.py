@@ -19,7 +19,8 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
+from django.contrib.auth import views as auth_views
+from django.contrib.auth.views import login
 
 
 
@@ -29,15 +30,16 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='index.html')),
     url(r'^admin/', admin.site.urls),
     url(r'^posts/', include("posts.urls", namespace='posts')),
-    
+    url(r'^login/$', auth_views.login, name='login'),
     url(r'^accounts/', include('registration.backends.hmac.urls')),
     url(r'^login/', TemplateView.as_view(template_name="registration/login.html")),
 
-    #url(r'^accounts/',include('registration.backends.hmac.urls')),
-    #url(r'^login/', TemplateView.as_view(template_name="login.html")),
-    #url(r'^posts/', TemplateView.as_view(template_name="posts.html"))
 
+    url(r'^accounts/login/$', auth_views.login, name='login'),
+    url(r'^success/', TemplateView.as_view(template_name="buy.html")),
+    url(r'^accounts/', include('django.contrib.auth.urls')),
 
+    url(r'^electronics/', TemplateView.as_view(template_name="electronics.html")),
     #url(r'^accounts/',include('registration.backends.hmac.urls')),
     #url(r'^login/', TemplateView.as_view(template_name="login.html")),
     #url(r'^posts/', TemplateView.as_view(template_name="posts.html"))

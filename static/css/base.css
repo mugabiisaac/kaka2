@@ -118,7 +118,7 @@ dd {
 }
 
 form {
-    margin: 0;
+    margin: 5px;
     padding: 0;
 }
 
@@ -242,6 +242,7 @@ p img, h1 img, h2 img, h3 img, h4 img, td img {
 table {
     border-collapse: collapse;
     border-color: #ccc;
+    padding: 50px;
 }
 
 td, th {
@@ -249,13 +250,14 @@ td, th {
     line-height: 16px;
     border-bottom: 1px solid #eee;
     vertical-align: top;
+
     padding: 8px;
     font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
 }
 
 th {
     font-weight: 600;
-    text-align: left;
+    text-align: center;
 }
 
 thead th,
@@ -406,7 +408,7 @@ table thead th.sorted .sortoptions a.descending:hover {
 
 input, textarea, select, .form-row p, form .button {
     margin: 2px 0;
-    padding: 2px 3px;
+    padding: 2px 30px;
     vertical-align: middle;
     font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
     font-weight: normal;
@@ -784,7 +786,8 @@ table#change-history tbody th {
     margin-right: -300px;
 }
 
-#footer {
+footer {
+    margin-bottom: auto;
     clear: both;
     padding: 10px;
 }
@@ -972,13 +975,6 @@ table#change-history tbody th {
     padding: 10px 20px;
 }
 
-
-
-
-
-
-
-
 div.polaroid {
     display: block;
     text-align: center;
@@ -1001,11 +997,15 @@ p.serif {
 }
 
 div.ex1 {
-    width: 1272px;
-    margin-left: -90px;
+    width: 100%;
     margin-top: 0px;
-    padding: 50px  ;
+    position: absolute;
+    padding: 5px;
     background: RGB(229, 231, 233);
+    text-align: center;
+    margin-left: 625px;
+    margin-right: 0;
+    transform: translate(-50%);
 
 }
 
@@ -1013,84 +1013,34 @@ ul {
     list-style-type: none;
     margin-top: 0;
     margin-left: 0;
-    margin-right: 0;
-    padding: 15px 2px;
+    padding: 5px 0;
     overflow: hidden;
     text-align: center;
+
 }
 
 ex2 {
   margin-right: -100px;
+  background: RGB(229, 231, 233);
+  width: 100%;
+  margin-top: 0px;
+  position: absolute;
+  padding: 5px;
+  text-align: center;
+  transform: translate(-50%);
+
 
 }
 
 h2 {
     font-family: Bernard MT Condensed;
-    color: white;
+    color: black;
     margin: 0;
     position: absolute;
     top: 35%;
     left: 30%;
     margin-right: 0%;
-    transform: translate(-50%);
-
-    -webkit-animation: jump 1.5s ease 0s infinite normal ;
-  animation: jump 1.5s ease 0s infinite normal ;
-}
-
-@-webkit-keyframes jump {
- 0%{
- -webkit-transform: translateY(0);
- transform: translateY(0);
- }
- 20%{
- -webkit-transform: translateY(0);
- transform: translateY(0);
- }
- 40%{
- -webkit-transform: translateY(-30px);
- transform: translateY(-30px);
- }
- 50%{
- -webkit-transform: translateY(0);
- transform: translateY(0);
- }
- 60%{
- -webkit-transform: translateY(-15px);
- transform: translateY(-15px);
- }
- 80%{
- -webkit-transform: translateY(0);
- transform: translateY(0);
- }
- 100%{
- -webkit-transform: translateY(0);
- transform: translateY(0);
- }
-}
-
-@keyframes jump {
- 0%{
- transform: translateY(0);
- }
- 20%{
- transform: translateY(0);
- }
- 40%{
- transform: translateY(-30px);
- }
- 50%{
- transform: translateY(0);
- }
- 60%{
- transform: translateY(-15px);
- }
- 80%{
- transform: translateY(0);
- }
- 100%{
- transform: translateY(0);
- }
+    /*transform: translate(-50%);*/
 
 }
 
@@ -1107,55 +1057,6 @@ h2 {
             animation: bannermove 30s linear infinite;
 }
 
-@keyframes "bannermove" {
- 0% {
-    margin-left: 0px;
- }
- 100% {
-    margin-left: -2455px;
- }
-
-}
-
-@-moz-keyframes bannermove {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -2455px;
- }
-
-}
-
-@-webkit-keyframes "bannermove" {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -2455px;
- }
-
-}
-
-@-ms-keyframes "bannermove" {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -2455px;
- }
-
-}
-
-@-o-keyframes "bannermove" {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -2455px;
- }
-
-}
 
 .photobanner img {
     -webkit-transition: all 0.2s ease;
@@ -1180,15 +1081,15 @@ h2 {
 }
 
 li {
-    float: left;
+    float: right;
 }
 
 li a {
       display: inline-block;
       color: RGB(25,0,0);
       text-align: center;
-      padding: 15px 38px;
-      margin-right: 0;
+      padding: 5px 8px;
+      margin-right: 5px;
       text-decoration: none;
 
 }
@@ -1209,7 +1110,7 @@ li a {
         background-color: RGB(236, 240, 241);
         border: none;
         color: black;
-        padding: 0;
+        padding: 10px;
         text-align: center;
         text-decoration: none;
         display: block;
@@ -1395,12 +1296,32 @@ body {font-family: Verdana,sans-serif;margin:0}
 }
 
 div.container1  {
-    font-family:
     color: RGB(33, 47, 61);
-    margin: 0;
-    position: absolute;
+    margin: 10px;
+    text-align: center;
     top: 30%;
-    left: 50%;
-    margin-right: 0%;
-    transform: translate(-50%);
+    left: -70%;
+    /*transform: translate(-50%);*/
+
+}
+thumbs {
+    width: 540px;
+    margin-top: 90px;
+    margin-left: auto;
+    margin-right: auto;
+
+      text-align: justify;
+     -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+}
+thumbs a {
+    vertical-align: top;
+    display: inline-block;
+    zoom: 1;
+}
+.stretch {
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
 }

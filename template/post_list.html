@@ -2,37 +2,24 @@
 {% block content %}
 <body>
   <div class="container">
-    <p class="serif">Kaka~online</p>
-    {% if user.is_authenticated %}
-      <ul class="nav navbar-nav navbar-right">
-        <!--<li><a href="{% url 'posts:list' %}" class="button2" role="button2">Buy</a></li>
 
-        <li class="button2"><a href="{% url 'auth_login' %}" class="button2" role="button2">Login</a></li>
-        <li><a href="{% url 'auth_login' %}" class="button2" role="button2">Contact us</a></li>-->
-        <form method='get' action=''>
-          <input type='text' name='q' placeholder='Search' value='{{ request.GET.q }}'/>
-          <input type='button' value='search'/>
-       </form>
-      </ul>
-    {% endif %}
-
-    <hr/>
 
     <div class="dropdown">
       <li class="button1"><a>Electronics</a></li>
-    <div class="dropdown-content">
-      <a href="#">Computers</a>
-      <a href="#">phones</a>
-      <a href="#">Sound systems</a>
-      <a href="#">Televisions</a>
-      <a href="#">Home Appliances</a>
-      <a href="#">Game consoles</a>
-      <a href="#">washing machines</a>
-      <a href="#">Kitchen appliances</a>
-      <a href="#">Printers</a>
-      <a href="#">cameras</a>
-    </div>
+      <div class="dropdown-content">
+        <a href="#">Computers</a>
+        <a href="#">phones</a>
+        <a href="#">Sound systems</a>
+        <a href="#">Televisions</a>
+        <a href="#">Home Appliances</a>
+        <a href="#">Game consoles</a>
+        <a href="#">washing machines</a>
+        <a href="#">Kitchen appliances</a>
+        <a href="#">Printers</a>
+        <a href="#">cameras</a>
+      </div>
   </div>
+
   <span>
   <div class="dropdown">
     <li class="button1"><a>Jewelary</a></li>
@@ -79,9 +66,8 @@
       <a href="#">Fun & Games</a>
   </div>
   </div>
-  <div class="ex1">
-    <h2>Welcome to the  number 1 online shop</h2>
- </div>
+  <br/>
+
   <!--<div class="col-sm-3">
 
     <form method='get' action=''>
@@ -96,13 +82,16 @@
         {% if obj.image %}<img style="width: 200px; height: 200px;" src='{{ obj.image.url }}'
           class='d-flex align-self-start mr-3' />{% endif %}
         <div class="caption">
-          <h3><a href='{{ obj.get_absolute_url }}'>{{ obj.title |linebreaks|truncatechars:25 }} </a></h3>
-          <p>{{ obj.description|linebreaks|truncatechars:30 }}</p>
-            {% if obj.user.get_full_name %}<p>Distributor: {{ obj.user.get_full_name }}</p>{% endif %}
-          <p><a href="{{ obj.get_absolute_url }}" class="btn btn-default" role="button">details</a>
-          <a href="#" class="btn btn-default" role="button">USD{{ obj.price }}</a></p>
-          <div id="cartAdd">
-            <button class="add_cart_large">Add to Cart</button>
+          <h3><a href='{{ obj.get_absolute_url }}'>{{ obj.title }} </a></h3>
+          <p>{{ obj.description|linebreaks|truncatechars:130 }}</p>
+          {% if obj.user.get_full_name %}
+            <p>Distributor: {{ obj.user.get_full_name }}</p>
+          {% endif %}
+
+          <p><a href="{{ obj.get_absolute_url }}" class="button" role="button">Shop now</a>
+          <a href="#" class="button" role="button">USD{{ obj.price }}</a></p>
+          <div class="add_to_cart">
+            <button>Add to Cart</button>
             <!--<input type="text" size="4" maxlength="6" value=" " name="cart_quantity"> -->
             <input type="hidden" value="139" name="products_id">
           </div>

@@ -1,52 +1,40 @@
 {% extends "base.html" %}
 {% block content %}
 <body>
-  <div class="container">
-    <p class="serif">Kaka~online</p>
-    {% if user.is_authenticated %}
-      <ul class="nav navbar-nav navbar-right">
-        <!--<li><a href="{% url 'posts:list' %}" class="button2" role="button2">Buy</a></li>
-
-        <li class="button2"><a href="{% url 'auth_login' %}" class="button2" role="button2">Login</a></li>
-        <li><a href="{% url 'auth_login' %}" class="button2" role="button2">Contact us</a></li>-->
-        <p><a href="{{ obj.get_absolute_url }}" class="btn btn-default" role="button">Order</a>
-        <a href="#" class="btn btn-default" role="button">Add to Cart</a></p>
-      </ul>
-    {% endif %}
+<div class="container">
 
     <hr/>
 
 
-{% block head_title %}
-{{ instance.title }} | {{ block.super }}
-{% endblock head_title %}
+    <!--{% block head_title %}
+    {{ instance.title }} | {{ block.super }}
+    {% endblock head_title %}-->
 
 
-<h1>{{ post.title }}</h1>
+    <h1>{{ instance.title }}</h1>
 
-<div class='col-sm-3 col-sm-offset-3'>
-  {% if instance.image %}
-    <img src='{{ instance.image.url }}' class='img-responsive' />
-  {% endif %}
-  <h1>{{ title }}</h1>
-  <p>{{ obj.description|linebreaks|truncatechars:30 }}</p>
-  {% if instance.user.get_full_name %}
-  <p>Distributor: {{ instance.user.get_full_name }}</p>
-  {% endif %}
-  <hr/>
-  <a href="#" class="btn btn-default" role="button">USD{{ obj.price }}</a></p>
-
-  Shipping: Free with USD30+ purchase.<hr/>
-  <p><div class="fb-like" data-href="{{ request.build_absolute_url }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div></p>
-
-
-  <div class='row'>
-    <div class='col-sm-12'>
-
-      {{ instance.content|linebreaks }}<br/><hr/>
-
+    <div class='col-sm-3 col-sm-offset-3'>
+      <div id="thumbs">
+        {% if instance.image %}
+          <img src='{{ instance.image.url }}' class='img-responsive' />
+        {% endif %}
+        <h1>{{ title }}</h1>
+        <p>{{ instance.description }}</p>
+        {% if instance.user.get_full_name %}
+          <p>Distributor: {{ instance.user.get_full_name }}</p>
+        {% endif %}
+        <hr/>
+        <p><a href="{% url 'posts:buy' instance.id %}", class="btn btn-default" role="button">buy</a>
+        <a href="#" class="btn btn-default" role="button">Add to Cart</a></p>
+        <p><a href=" " class="btn btn-default" role="button">USD{{ instance.price }}</a></p>
+        <p>Shipping: Free with USD30+ purchase.</p><hr/>
+        {{ instance.content|linebreaks }}
+        <p><small>{{ instance.timestamp|timesince }} ago</small></p>
+        <span class="stretch"></span>
+      </div>
     </div>
-  </div>
+
 </div>
+</body>
 
 {% endblock content %}

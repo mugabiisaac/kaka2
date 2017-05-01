@@ -1,95 +1,29 @@
+{% extends "base.html" %}
 <!DOCTYPE HTML>
 {% load i18n %}
 <html>
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>{% block head_title %}register{% endblock head_title %}</title>
-
-<style>
-{% block style %}
-body {
-      background-image:
-}
-
-p.serif {
-  display: block;
-  color: white;
-  text-align: center;
-  font-size: 30px;
-  padding: 5px 18px;
-  text-decoration: none;
-
-}
-
-
-div.container  {
-    font-family:
-    color: RGB(33, 47, 61);
-    margin: 0;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    margin-right: 0%;
-    line-height: 200%;
-    transform: translate(-50%);
-}
-
-
-ul {
-position: fixed;
-        top: 0px;
-        left: -70px;
-        right: -70px;
-    list-style-type: none;
-    margin-top: 0;
-    margin-left: 0;
-    padding:0;
-    overflow: hidden;
-    background-color: black;
-    font-family:
-}
-
-
-
-
-.button {
-        background-color: RGB(252,243,207);
-        border: none;
-        color: black;
-        padding: 6px 15px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 12px;
-        cursor: pointer;
-}
-
-{% endblock style %}
-</style>
+  </head>
+  <title>{% block head_title %}register{% endblock head_title %}</title>
 
 {% block content %}
 <body>
-  <ul>
-    <p class="serif">Kaka~Online</p>
-  </ul>
-  <div class="container">
-
-      <form action="," method="post">
-
-        <label for="User_Name">User Name: </label><br/>
-          <input id="User_Name" type="text" name="User_Name" value="{{ current_name }}"><br/>
-          <label for="Email">Email: </label><br/>
-          <input id="Email" type="text" name="Email" value="{{ current_email }}"><br/>
-          <label for="Password">Password: </label><br/>
-          <input id="Password" type="text" name="Password" value="{{ current_Password }}"><br/>
-          <label for="Confirm_Password">Confirm Password: </label><br/>
-          <input id="Confirm_Password" type="text" name="Confirm_Password" value="{{ current_Password }}"><br/>
-      </form>
-          <a href="{% url 'auth_login' %}"><input class="button" type="submit"
-             value="{% trans 'Submit' %}" />
+  <div class="container1">
+    <div class="ex2">
+      <table>
+        <form method='post' action=''>
+          {% csrf_token %}
+          {{ form }}
+        </form>
+      </table>
+      <input type="submit" value="{% trans "send activation email" %}" />
+    </div>
   </div>
+
+
 </body>
+
 {% endblock %}

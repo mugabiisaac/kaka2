@@ -1,52 +1,55 @@
+<!DOCTYPE html>
 {% load static %}
-<!--DOCTYPE html -->
+
 <html>
-
 <head>
-    <title>{% block head_title %}Try Django 1.10{% endblock head_title %}</title>
+  <title>{% block head_title %}Try Django 1.10{% endblock head_title %}</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    crossorigin="anonymous">
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <link rel='stylesheet' href='{% static "css/base.css" %}' />
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-
-
-    <link rel='stylesheet' href='{% static "css/base.css" %}' />
-    <style>
-
-    </style>
-
-    <script>
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
 
 <style>
-{% block style %} {% endblock style %}
+  {% block style %} {% endblock style %}
 </style>
-
 </head>
 <body>
-
-<div class='container'>
+  <div class='container'>
     {% include "messages_display.html" %}
-    {% block content %}{% endblock content %}
-</div>
+
+  </div>
 
 
+  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>-->
 
+    <p class="serif">Kaka~online</p>
 
+      <ul class="nav navbar-nav navbar-right">
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'posts:list' %}" class="button2" role="button2">Buy</a></li>
+          <li><a href="{% url 'posts:create' %}" class="button2" role="button2">Sell</a></li>
+          <li><a href="{% url 'auth_logout' %}?next=/" class="button2" role="button">Logout</a></li>
+        {% endif %}
+        {% if not user.is_authenticated %}
+          <li><a href="{% url 'auth_login' %}" class="button2" role="button">Login</a></li>
+          <li><a href="{% url 'registration_register' %}" class="button2" role="button2">Signup</a></li>
+        {% endif %}
+          <li><div method='get' action=''>
+            <input type='text' name='q' placeholder='' value='{{ request.GET.q }}'/>
+            <input type='button' value='search'/>
+          </di></li>
 
-
+      </ul>
+      <hr/>
+{% block content %}{% endblock content %}
 </body>
 
 </html>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<!-- Latest compiled and minified JavaScript -->
