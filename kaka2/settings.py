@@ -183,6 +183,3 @@ ORDER_STATUS_PIPELINE ={
 #DATABASES['default'].update(db_from_env)
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-export DJANGO_SETTINGS_MODULE=kaka2.settings
-heroku config:set DJANGO_SETTINGS_MODULE=kaka2.settings --account personal
