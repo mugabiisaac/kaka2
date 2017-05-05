@@ -4,14 +4,14 @@
 <html>
 <head>
   <title>{% block head_title %}Try Django 1.10{% endblock head_title %}</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
     integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-    crossorigin="anonymous">
-  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    crossorigin="anonymous">-->
+  <!--<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
   <link rel='stylesheet' href='{% static "css/base.css" %}' />
 
 
@@ -33,19 +33,20 @@
     <p class="serif">Kaka~online</p>
 
       <ul class="nav navbar-nav navbar-right">
+        <li><a method='get' action=''>
+          <input type='text' name='q' placeholder='' value='{{ request.GET.q }}'/>
+          <input type='button' value='search'/>
+        </a></li>
+
         {% if user.is_authenticated %}
-          <li><a href="{% url 'posts:list' %}" class="button2" role="button2">Buy</a></li>
-          <li><a href="{% url 'posts:create' %}" class="button2" role="button2">Sell</a></li>
-          <li><a href="{% url 'auth_logout' %}?next=/" class="button2" role="button">Logout</a></li>
+          <li><a href="{% url 'posts:list' %}" class="button" role="button">Buy</a></li>
+          <li><a href="{% url 'posts:create' %}" class="button" role="button">Sell</a></li>
+          <li><a href="{% url 'auth_logout' %}?next=/" class="button" role="button">Logout</a></li>
         {% endif %}
         {% if not user.is_authenticated %}
-          <li><a href="{% url 'auth_login' %}" class="button2" role="button">Login</a></li>
-          <li><a href="{% url 'registration_register' %}" class="button2" role="button2">Signup</a></li>
+          <li><a href="{% url 'auth_login' %}" class="button" role="button">Login</a></li>
+          <li><a href="{% url 'registration_register' %}" class="button" role="button">Signup</a></li>
         {% endif %}
-          <li><div method='get' action=''>
-            <input type='text' name='q' placeholder='' value='{{ request.GET.q }}'/>
-            <input type='button' value='search'/>
-          </di></li>
 
       </ul>
       <hr/>

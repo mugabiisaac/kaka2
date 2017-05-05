@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 {% extends "base.html" %}
+{% load static %}
 
 <head>
   <meta charset="utf-8">
@@ -11,12 +12,13 @@
 
 {% block content %}
 <body>
-<hr/>
 
+<div class="container">
+  <ul>
   <div class="dropdown">
     <li class="button1"><a>Electronics</a></li>
     <div class="dropdown-content">
-      <a href="{{ post_electronics.html }}">Computers</a>
+      <a href="{% url 'posts:electronics' %}">Computers</a>
       <a href="#">phones</a>
       <a href="#">Sound systems</a>
       <a href="#">Televisions</a>
@@ -74,6 +76,8 @@
       <a href="#">Fun & Games</a>
     </div>
   </div>
+ </ul>
+</div>
 
    <div class="slideshow-container">
      <div class="mySlides fade">

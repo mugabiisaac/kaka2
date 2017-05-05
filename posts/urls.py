@@ -24,5 +24,5 @@ urlpatterns = [
     url(r'^(?P<id>\d+)/edit/$', post_update, name='update'),
     url(r'^(?P<id>\d+)/delete/$', post_delete),
     url(r'^buy/(?P<id>\d+)/$', post_buy, name='buy'),
-    url(r'^electronics(?P<id>\d+)/$', post_electronics, name='electronics'),
+    url(r'^$', post_electronics, name='electronics'),
 ]

@@ -5,9 +5,14 @@
 @import url(fonts.css);
 
 body {
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
+    /*position: fixed;*/
+    top: 0! important;
+    bottom: 0! important;
+    left: 0! important;
+    right: 0! important;
+    /*margin: 0;
+    padding: 0;*/
+    font-size: 14px! important;
     font-family: "Roboto","Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
     color: #333;
     background: white;
@@ -94,10 +99,10 @@ h5 {
     letter-spacing: 1px;
 }
 
-ul li {
+/*ul li {
     list-style-type: square;
     padding: 1px 0;
-}
+}*/
 
 li ul {
     margin-bottom: 0;
@@ -118,7 +123,7 @@ dd {
 }
 
 form {
-    margin: 5px;
+    margin-left: 0;
     padding: 0;
 }
 
@@ -160,7 +165,7 @@ hr {
     height: 1px;
     border: none;
     margin: auto;
-    margin-right: -32px;
+    margin-right: -13px;
     margin-left: -100px;
     padding: 0;
     font-size: 1px;
@@ -243,6 +248,7 @@ table {
     border-collapse: collapse;
     border-color: #ccc;
     padding: 50px;
+    margin-left: 0;
 }
 
 td, th {
@@ -997,13 +1003,13 @@ p.serif {
 }
 
 div.ex1 {
-    width: 100%;
+    //*width: 100%;*/
     margin-top: 0px;
     position: absolute;
-    padding: 5px;
+    padding: 40px;
     background: RGB(229, 231, 233);
-    text-align: center;
-    margin-left: 625px;
+    /*text-align: center;*/
+    margin-left: 590px;
     margin-right: 0;
     transform: translate(-50%);
 
@@ -1011,11 +1017,13 @@ div.ex1 {
 
 ul {
     list-style-type: none;
-    margin-top: 0;
-    margin-left: 0;
-    padding: 5px 0;
-    overflow: hidden;
-    text-align: center;
+    display: inline;
+    margin-top: 0! important;
+    margin-left: 25%! important;
+    /*margin-right: -250! important;*/
+    padding: 5px 0! important;
+    overflow: hidden! important;
+    text-align: center! important;
 
 }
 
@@ -1081,7 +1089,7 @@ h2 {
 }
 
 li {
-    float: right;
+    float: right! important;
 }
 
 li a {
@@ -1089,7 +1097,7 @@ li a {
       color: RGB(25,0,0);
       text-align: center;
       padding: 5px 8px;
-      margin-right: 5px;
+      margin-right: 25px;
       text-decoration: none;
 
 }
@@ -1154,9 +1162,9 @@ li a {
 
 }
 
-* {box-sizing:border-box}
+/* {box-sizing:border-box}
 body {font-family: Verdana,sans-serif;margin:0}
-.mySlides {display:none}
+.mySlides {display:none}*/
 
 /* Slideshow container */
 .slideshow-container {
